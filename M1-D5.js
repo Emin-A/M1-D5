@@ -14,67 +14,75 @@
 /* Ex.A
    Create a variable test that contains a string
 */
-// const test = "Strive";
-// console.log(test);
+const test = "Strive";
+console.log(test);
 
 /* Ex.B
     Create a variable sum that contains the result of the sum between 10 and 20 
 */
-// const result = 5 + 10;
-// const sum = result;
+const result = 5 + 10;
+const sum = result;
 
 // console.log(sum);
 /* Ex.C 
-    Create a variable random that contains a random number between 0 and 20 (should be randomly created at each execution)
+    Create a variable random that contains a random number
+     between 0 and 20 (should be randomly created at each 
+      execution)
 */
 
-// const random = 17;
-// const counter = 0;
+const random = 17;
+const counter = 0;
 
-// for (let counter = 0; counter <= 20; counter++) {
-//   console.log(random);
-// }
+for (let counter = 0; counter <= 20; counter++) {
+  console.log(random);
+}
 
 /* Ex.D
-    Create a variable Me containing and object with the current information: Name = Your Name, Surname = Your Surname, Age = Your Age
+    Create a variable Me containing and object with the
+     current information: Name = Your Name, Surname = 
+     Your Surname, Age = Your Age
 */
-// const Me = {
-//   Name: "Emin",
-//   Surname: "Avdovic",
-//   Age: 30,
-// };
+const Me = {
+  Name: "Emin",
+  Surname: "Avdovic",
+  Age: 30,
+};
 
 // console.log(Me);
 /* Ex.E 
-    Programmatically remove the Age from the previously create object Me
+    Programmatically remove the Age from the previously 
+    create object Me
 */
-// delete Me.Age;
-// console.log(Me);
+delete Me.Age;
+console.log(Me);
 /* Ex.F 
-   Programmatically add to the object Me an array "skills" that contains the programming languages that you know
+   Programmatically add to the object Me an array 
+   "skills" that contains the programming languages that
+    you know
 */
-// Me.skills = ["JavaScript", "Python 3.0"];
-// console.log(Me);
+Me.skills = ["JavaScript", "Python 3.0"];
+console.log(Me);
 /* Ex.G 
    Programmatically remove the last skill from the array "skills" inside of the "me" object
 */
-// Me.skills.pop(1);
-// console.log(Me);
+Me.skills.pop(1);
+console.log(Me);
 
 // JS Functions
 /* Ex.1
-    Write the function Dice that randomize an integer number between 1 and 6
+    Write the function Dice that randomize an integer 
+    number between 1 and 6
 */
 
-// function Dice(min, max) {
-//   return Math.floor(Math.random() * (max - min) + min);
-// }
+function Dice(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
 
-// console.log(Dice(1, 6));
+console.log(Dice(1, 6));
 
 /* Ex.2 
-    Write the function WhoIsBigger that receives 2 numbers and returns 
-    the bigger of the 2
+    Write the function WhoIsBigger that receives 2 numbers
+     and returns the bigger of the 2
 */
 
 // Attempt 1 INCORRECT!:
@@ -108,9 +116,10 @@ function WhoIsBigger(x, y) {
 console.log(WhoIsBigger(1, 2));
 
 /* Ex.3
-    Write the function SplitMe that receives a String and returns an 
-    array with every word in that string
-    Ex. SplitMe("I love coding") => returns [ "I","Love","Coding"]
+    Write the function SplitMe that receives a String and 
+    returns an array with every word in that string
+    Ex. SplitMe("I love coding") => returns 
+    [ "I","Love","Coding"]
 */
 //Attempt 1 INCORRECT!:
 
@@ -131,10 +140,24 @@ function SplitMe(String) {
 console.log(SplitMe("I Love Coding"));
 
 /* Ex.4
-    Write the function DeleteOne that receives a string and a boolean. 
-    If the boolean is true, should return the string without the first
-     letter, otherwise should remove the last one
+    Write the function DeleteOne that receives a string 
+    and a boolean. If the boolean is true, should return
+     the string without the first letter, otherwise 
+     should remove the last one
 */
+
+// ATTEMPT 4 CORRECT ???:  (boolean.toString()) return a string "true"
+// or "false"
+function DeleteOne() {
+  let Boolean = true;
+  if (Boolean === true) {
+    return "ODE";
+  } else Boolean === false;
+  return "COD";
+}
+
+console.log(DeleteOne("CODE")); //receives a string
+
 // ATTEMPT 1 INCORRECT!:
 
 // function DeleteOne(String1) {
@@ -176,13 +199,38 @@ console.log(SplitMe("I Love Coding"));
 // console.log(DeleteOne("CODE"));
 
 /* Ex.5
-   Write the function OnlyLetters that receives a string, removes all the numbers and returns it.
-   Ex.: OnlyLetters("I love 123 whatever")  => returns "I love whatever"
+   Write the function OnlyLetters that receives a string, 
+   removes all the
+    numbers and returns it.
+   Ex.: OnlyLetters("I love 123 whatever")  => returns 
+   "I love whatever"
 */
 
 /* Ex.6 
-   Write the function IsThisAnEmail that receives a string and returns true if the string is a valid email.
+   Write the function IsThisAnEmail that receives a string 
+   and returns true if the string is a valid email.
 */
+//ATTEMPT 2 CORRECT!:
+function IsThisAnEmail(inputText) {
+  let mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (inputText.match(mailformat)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(IsThisAnEmail("eminavdovic@hotmail.com"));
+//ATTEMPT 1 :
+// function IsThisAnEmail() {
+//   let email = true;
+//   if (email === "@") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// console.log(IsThisAnEmail("eminavdovic@hotmail.com")); //receives a string
 
 /* Ex.7
    Write the function WhatDayIsIt that should return the day of the week
@@ -260,11 +308,11 @@ console.log(SplitMe("I Love Coding"));
   ***
 */
 // ATTEMPT 1 using a for loop:
-// let i = "*";
+let i = "*";
 
-// for (let i = "*"; i.length <= 3; i = i + "*") {
-//   console.log(i);
-// }
+for (let i = "*"; i.length <= 3; i = i + "*") {
+  console.log(i);
+}
 
 /* Ex.22 
   Create a function Tree that receives the height and creates an "*" tree with that height
