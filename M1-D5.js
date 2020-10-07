@@ -233,22 +233,65 @@ console.log(IsThisAnEmail("eminavdovic@hotmail.com"));
 // console.log(IsThisAnEmail("eminavdovic@hotmail.com")); //receives a string
 
 /* Ex.7
-   Write the function WhatDayIsIt that should return the day of the week
+   Write the function WhatDayIsIt that should return the
+    day of the week
 */
+//ATTEMPT 1 Works but not specific to the question:
+// function WhatDayIsIt() {
+//   return (today = "Wednesday");
+// }
+// console.log(WhatDayIsIt());
+
+//ATTEMPT 2  95% correct!:
+function WhatDayIsIt() {
+  const day1 = new Date("October 07, 2020 8:02:00");
+  const weekday = day1.getDay();
+  const options = { weekday: "long" };
+  // return weekday;
+  return new Intl.DateTimeFormat("en-US", options).format(day1);
+}
+console.log(WhatDayIsIt());
+// console.log(new Intl.DateTimeFormat("en-US", options).format(day1));
 
 /* Ex.8
-    Write the function RollTheDices that receives a numeric input and returns an object that contains both the sum of the value of the dices and the dices itself
+    Write the function RollTheDices that receives a numeric input and returns an object that contains both the sum of the 
+    value of the dices and the dices itself
     This function should use the Dice function defined in Ex1
     Example: RollTheDices(3) => returns {
         sum: 10
         values: [ 3, 3, 4]
     }
 */
+// function RollTheDices(param1) {
+//   const x = param1;
+//   return Math.floor(Math.random);
+// }
+// console.log(5); // receives an numeric input
+
+function RollTheDices(x, y, z) {
+  // console.log("sum: ");
+  return (
+    "sum: " +
+    Math.floor(Math.random() + x + y + z) +
+    "\n" +
+    "values: " +
+    [x, y, z]
+  );
+  // return [x, y, z];
+}
+console.log(RollTheDices(3, 4, 3));
 
 /* Ex.9
    Write the function HowManyDays that receives a Date and return the number of days that has passed since that day.
 */
+// ATTEMPT 1 90% Correct !
+function HowManyDays(dt) {
+  var today = new Date(dt.getDay());
+  var day = today.getUTCDate();
 
+  return Math.ceil(day - today);
+}
+console.log(HowManyDays(new Date(2020, 10, 01))); // add date
 /* Ex.10
    Write the function IsTodayMyBDay that returns true if it's your birthday, false otherwise
 */
@@ -308,11 +351,15 @@ console.log(IsThisAnEmail("eminavdovic@hotmail.com"));
   ***
 */
 // ATTEMPT 1 using a for loop:
-let i = "*";
+// let i = "*";
 
-for (let i = "*"; i.length <= 3; i = i + "*") {
-  console.log(i);
-}
+// for (let i = "*"; i.length <= 3; i = i + "*") {
+//   console.log(i);
+// }
+
+// function halfTree(num) {
+//   for (let i = "*"; i.length <= num; i = i + "*") return halfTree;
+// }
 
 /* Ex.22 
   Create a function Tree that receives the height and creates an "*" tree with that height
@@ -322,6 +369,14 @@ for (let i = "*"; i.length <= 3; i = i + "*") {
    *** 
   *****
 */
+// function tree(n) {
+//   let space = " ";
+//   let char = "*";
+//   for (let i = 0; i < n + 1; i++) {
+//     console.log(space.repeat(n - i) + char.repeat()); //incomplete
+//   }
+// }
+// Tree(3);
 
 /* Ex.23
   Create a function IsItPrime that receives a number and return true if the number is a prime number
